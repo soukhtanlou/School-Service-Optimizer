@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>بهینه‌ساز مسیر OpenStreetMap</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        #map { height: 70vh; width: 75%; float: left; }
+        #sidebar { height: 70vh; width: 25%; float: right; padding: 10px; overflow-y: scroll; font-family: Tahoma, sans-serif; }
+        .point-input { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <div id="sidebar" dir="rtl">
+        <h2>تنظیم نقاط مسیر (OSM)</h2>
+        <div id="points-list">
+            <div class="point-input">
+                <label>مبدأ راننده:</label>
+                <input type="text" class="address-input" id="addr-0" data-role="origin" placeholder="آدرس یا کلیک روی نقشه">
+            </div>
+            <hr>
+            <h4>۴ محل سوار شدن دانش‌آموزان:</h4>
+            <div class="point-input"><label>۱:</label><input type="text" class="address-input" id="addr-1" data-role="waypoint"></div>
+            <div class="point-input"><label>۲:</label><input type="text" class="address-input" id="addr-2" data-role="waypoint"></div>
+            <div class="point-input"><label>۳:</label><input type="text" class="address-input" id="addr-3" data-role="waypoint"></div>
+            <div class="point-input"><label>۴:</label><input type="text" class="address-input" id="addr-4" data-role="waypoint"></div>
+            <hr>
+            <div class="point-input">
+                <label>مقصد نهایی (مدرسه):</label>
+                <input type="text" class="address-input" id="addr-5" data-role="destination">
+            </div>
+        </div>
+        <button onclick="calculateRoute()">محاسبه مسیر بهینه</button>
+        <div id="results"></div>
+    </div>
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
